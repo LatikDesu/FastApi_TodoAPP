@@ -20,6 +20,11 @@
 </p>
 </h2>
 
+<p align="center">
+<img src="https://github.com/LatikDesu/FastApi_TodoAPP/blob/778b3793d57837844f509f8b79d898b96147c6d3/static/todo/FastToDo.gif?raw=true" width="40%"></p>
+
+
+
 ## Description
 
 - созданы методы HTTP-запроса (GET, POST, PUT, DELETE)
