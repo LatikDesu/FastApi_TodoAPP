@@ -1,0 +1,65 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Ваши задачи
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Список Ваших задач!</h5>
+            <p class="card-text">Выполнил задачу - поставил галочку</p>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Действие</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for todo in todos %}
+                {% if todo.complete == False %}
+                <tr class="pointer">
+
+                    <td>{{loop.index}}</td>
+                    <td>{{todo.title}}</td>
+                    <td>
+                        <button onclick="window.location.href='complete/{{todo.id}}'"
+                                type="button" class="btn btn-success">OK</button>
+                        <button onclick="window.location.href='edit-todo/{{todo.id}}'"
+                                type="button" class="btn btn-info">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+
+                {% else %}
+                <tr class="pointer alert alert-success">
+
+                    <td>{{loop.index}}</td>
+                    <td class="strike-through-td">{{todo.title}}</td>
+                    <td>
+                        <button onclick="window.location.href='complete/{{todo.id}}'"
+                                type="button" class="btn btn-success">не ОК
+                        </button>
+                        <button onclick="window.location.href='edit-todo/{{todo.id}}'"
+                                type="button" class="btn btn-info">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+
+                {% endif %}
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+            <a href="add-todo" class="btn btn-primary">Добавить новую задачу!</a>
+        </div>
+    </div>
+</div>
+
